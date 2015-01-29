@@ -8,7 +8,7 @@ Tested up to: 4.1
 Stable Tag: 1.0.2
 License: GNU Version 2 or Any Later Version
 
-Create submission definitions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digitial Downloads and Woo Commerce sales records.
+Create submission definitions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digital Downloads &amp; Woo Commerce sales records.
 
 == Description ==
 
