@@ -16,7 +16,7 @@ Create submissions for EC Sales List returns (VAT101) to be sent directly to HMR
 
 Each quarter, or even month, UK businesses must submit to the UK tax authority (HMRC) an **EC Sales List** to document sales made to businesses in other EU member states. This plug-in integrates with Easy Digital Downloads and/or Woo Commerce so it is able retrieve relevant sales records from which to create the quarterly (or monthly) return.
 
-**Note:** This plugin is free to download and you will be able to use it to create and test EC Sales List submissions. To submit returns directly to HMRC you will need to purchase a credit [from our web site](http://www.lyquidity.com/wpstore/2015/01/wp-vat-ec-sales-list-submissions/ "Buy credits"): &pound;5 for a single submission; &pound;18 for 4 submissions; &pound;50 for 12 submissions.
+**Note:** This plugin is free to download and you will be able to use it to create and test EC Sales List submissions. To submit returns directly to HMRC you will need to purchase a credit [from our web site](http://www.lyquidity.com/wpstore/2015/01/wp-vat-ec-sales-list-submissions/ "Buy credits"): &pound;5 for a single submission; &pound;18 for 4 (quarterly) submissions; &pound;50 for 12 (monthly) submissions.
 
 = Features =
 
