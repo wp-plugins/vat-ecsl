@@ -8,7 +8,7 @@ Tested up to: 4.1
 Stable Tag: 1.0.2
 License: GNU Version 2 or Any Later Version
 
-Create submission definitions for EC Sales List returns to be sent directly to HMRC from Easy Digitial Downloads and Woo Commerce sales records.
+Create submission definitions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digitial Downloads and Woo Commerce sales records.
 
 == Description ==
 
@@ -16,31 +16,31 @@ Create submission definitions for EC Sales List returns to be sent directly to H
 
 Each quarter, or even month, UK businesses must submit to the UK tax authority (HMRC) an **EC Sales List** to document sales made to businesses in other EU member states. This plug-in integrates with Easy Digital Downloads and/or Woo Commerce so it is able retrieve relevant sales records from which to create the quarterly return.
 
-**Note:** This plugin is free to download and you will be able to use it to create and test EC Sales List submissions. To submit returns to directly HMRC you will need to purchase a credit: £5 for a single submission; £18 for 4 submissions; £50 for 12 submissions.
+**Note:** This plugin is free to download and you will be able to use it to create and test EC Sales List submissions. To submit returns to directly HMRC you will need to purchase a credit: &pound;5 for a single submission; &pound;18 for 4 submissions; &pound;50 for 12 submissions.
 
 = Features =
 
 **Select your e-commerce package**
 
-	* Easy Digital Downloads or
-	* Woo Commerce
+  * Easy Digital Downloads or
+  * Woo Commerce
 
 **Create quarterly or month submissions**
 
-	* Select the transactions to included
-	* The plugin will only present sales to EU businesses outside the UK so you cannot select invalid sales records
-	* Specify the quarter for the submission
-	* Test your EC Sales List return submission before sending it live
+  * Select the transactions to included
+  * The plugin will only present sales to EU businesses outside the UK so you cannot select invalid sales records
+  * Specify the quarter for the submission
+  * Test your EC Sales List return submission before sending it live
 
 **Roles**
 
-	* Provides role you can use to control who is able to create and submit returns
-	* Give your accountant limited access to be able to submit returns
-	* Or only give your accountant the ability to view returns.
+  * Provides role you can use to control who is able to create and submit returns
+  * Give your accountant limited access to be able to submit returns
+  * Or only give your accountant the ability to view returns.
 
 **Videos**
 
-	[Watch videos](http://www.lyquidity.com/wpstore/2015/01/wp-vat-ec-sales-list-submissions/ "Videos showing the plug-in working") showing how to setup the plugin, create a submission and and send the return to HMRC
+[Watch videos](http://www.lyquidity.com/wpstore/2015/01/wp-vat-ec-sales-list-submissions/ "Videos showing the plug-in working") showing how to setup the plugin, create a submission and and send the return to HMRC
 	
 **Submit EC Sales list returns directly to HMRC**
 
