@@ -34,7 +34,7 @@ Each quarter, or even month, UK businesses must submit to the UK tax authority (
 
 **Roles**
 
-  * Provides role you can use to control who is able to create and submit returns
+  * Provides roles you can use to control who is able to create and submit returns
   * Give your accountant limited access to be able to submit returns
   * Or only give your accountant the ability to view returns.
 
@@ -51,7 +51,7 @@ Each quarter, or even month, UK businesses must submit to the UK tax authority (
 = Q. Do I need to buy credits to use the plugin? =
 A. You are able to create a submission that will list the transactions to be included in a monthly or quarterly return without buying credits. However to send a return directly to HMRC you will need to buy a credit.
 
-= Q. Do I need to buy a credit to test a submission?
+= Q. Do I need to buy a credit to test a submission? =
 A. No, you are able to test sending an EC Sales List return before you buy a credit.
 
 == Installation ==
