@@ -1,12 +1,12 @@
 <?php
 
 /*
-Part of: EU VAT for EDD
-Description: Create a report to display the list of submissions.
-Author: Bill Seddon
-Author URI: http://www.lyquidity.com
-Copyright: Lyquidity Solutions Limited 2013 and later
-License: Lyquidity Commercial
+ * Part of: ECSL
+ * @Description:	Create a report to display the list of submissions.
+ * @Author:			Bill Seddon
+ * @Author URI:		http://www.lyquidity.com
+ * @Copyright:		Lyquidity Solutions Limited 2013 and later
+ * @License:		GNU Version 2 or Any Later Version
 */
 
 namespace lyquidity\vat_ecsl;

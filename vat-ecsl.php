@@ -10,7 +10,7 @@ Author: Lyquidity Solutions
 Author URI: http://www.lyqidity.com/wpstore/
 Contributors: Bill Seddon
 Copyright: Lyquidity Solutions Limited
-License: Lyquidity Commercial Plug-in
+License: GNU Version 2 or Any Later Version
 Updateable: true
 Text Domain: vat-ecsl
 Domain Path: /languages

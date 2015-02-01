@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * ECSL Class menus
+ *
+ * @package     vat-ecsl
+ * @subpackage  Includes
+ * @copyright   Copyright (c) 2014, Lyquidity Solutions Limited
+ * @License:	GNU Version 2 or Any Later Version
+ * @since       1.0
+ */
+
 namespace lyquidity\vat_ecsl;
 
 class VAT_ECSL_Admin_Menu {

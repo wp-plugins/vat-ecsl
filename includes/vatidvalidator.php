@@ -1,16 +1,16 @@
 <?php
 
 /*
-Description: VAT validation
-Author: Bill Seddon
-Author URI: http://www.lyquidity.com
-Copyright: Lyquidity Solutions Limited 2013 and later
-License: Lyquidity Commercial
-History: This is a port of the JavaScript code to check VAT numbers
-	2013-12-04 Updated to reflect the most recent version of the JavaScript code
-			   See the JS code for it's history.  It can be foundhere
-			   http://www.braemoor.co.uk/software/downloads/jsvat.zip
-*/
+ * @Description: VAT validation
+ * @Author: Bill Seddon
+ * @Author URI: http://www.lyquidity.com
+ * @Copyright: Lyquidity Solutions Limited 2013 and later
+ * @License:	GNU Version 2 or Any Later Version
+ * @History: This is a port of the JavaScript code to check VAT numbers
+ *		2013-12-04 Updated to reflect the most recent version of the JavaScript code
+ *			   See the JS code for it's history.  It can be foundhere
+ *			   http://www.braemoor.co.uk/software/downloads/jsvat.zip
+ */
 
 namespace lyquidity\vat_ecsl;
 

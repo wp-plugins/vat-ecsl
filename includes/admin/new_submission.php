@@ -1,12 +1,12 @@
 <?php
 
 /**
- * ECSL Type Functions
+ * ECSL Create a new definition (also edit and view)
  *
  * @package     vat-ecsl
  * @subpackage  Includes
  * @copyright   Copyright (c) 2014, Lyquidity Solutions Limited
- * @license     Lyquidity Commercial
+ * @License:	GNU Version 2 or Any Later Version
  * @since       1.0
  */
 

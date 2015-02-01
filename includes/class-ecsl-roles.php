@@ -5,7 +5,7 @@
  * @package     vat-ecsl
  * @subpackage  Classes/Roles
  * @copyright   Copyright (c) 2014, Lyquidity Solutions Limited
- * @license     Lyquidity Commercial
+ * @License:	GNU Version 2 or Any Later Version
  * @since       1.0
 */
 

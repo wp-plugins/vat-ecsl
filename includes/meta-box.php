@@ -1,14 +1,14 @@
 <?php
 
 /*
-Part of: ECSL 
-Description: Implements a metabox for product definition posts so the site owner is able to select the indicator type for the product.
-Version: 1.0.1
-Author: Bill Seddon
-Author URI: http://www.lyqidity.com
-Copyright: Lyquidity Solution Limited
-License: Lyquidity Commercial
-*/
+ * Part of: ECSL 
+ * @Description:	Implements a metabox for product definition posts so the site owner is able to select the indicator type for the product.
+ * @Version:		1.0.1
+ * @Author:			Bill Seddon
+ * @Author URI:		http://www.lyqidity.com
+ * @Copyright:		Lyquidity Solution Limited
+ * @License:		GNU Version 2 or Any Later Version
+ */
 
 namespace lyquidity\vat_ecsl;
 
