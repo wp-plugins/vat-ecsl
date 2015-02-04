@@ -101,7 +101,7 @@ class ECSL_HTML_Elements {
 		$selected = empty( $selected ) ? date( 'n' ) : $selected;
 
 		while ( $month <= 12 ) {
-			$options[ absint( $month ) ] =date("F", mktime(0, 0, 0, $month));
+			$options[date('m', mktime(0, 0, 0, $month))] = date("F", mktime(0, 0, 0, $month));
 			$month++;
 		}
 
