@@ -144,9 +144,9 @@ class ECSL_WP_Integrations {
 					// Translate the values if they are no already GBP
 					if ($vat_record['currency_code'] !== 'GBP')
 					{
-						error_log("Currency is GBP ({$vat_record['id']})");
+//						error_log("Currency is {$vat_record['currency_code']} ({$vat_record['id']}) - $value");
 						$value = $me->translate_amount( $value, $vat_record['date'], $vat_record['currency_code'], 'GBP', $vat_record['id'] );
-						error_log("$value");
+//						error_log("$value");
 					}
 					$value = floor( $value );
 				});
@@ -254,9 +254,24 @@ class ECSL_WP_Integrations {
 			if ($result['status'] === 'error')
 				return $result;
 
-			$information = array_merge( $information, array_map( function($item) use($integration)
+			$me = $this;
+
+			$information = array_merge( $information, array_map( function($item) use($integration, $me)
 			{
 				$item['source']  = $integration->source;
+				
+				array_walk( $item['values'], function(&$value, $key) use( $item, $me )
+				{
+					// Translate the values if they are no already GBP
+					if ($item['currency_code'] !== 'GBP')
+					{
+//						error_log("Currency is {$item['currency_code']} ({$item['id']}) - $value");
+						$value = $me->translate_amount( $value, $item['date'], $item['currency_code'], 'GBP', $item['id'] );
+//						error_log("$value");
+					}
+					$value = floor( $value );
+				});
+
 				return $item;
 			}, $result['information'] ) );
 

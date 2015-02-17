@@ -125,11 +125,9 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 				$billing_first_name	= get_post_meta( $payment_id, '_billing_first_name',	true );
 				$billing_last_name	= get_post_meta( $payment_id, '_billing_last_name', 	true );
 				$order_total		= get_post_meta( $payment_id, '_order_total',			true );
-				$vat_paid			= get_post_meta( $payment_id, 'vat_compliance_vat_paid',	true );
-				$vat_paid			= maybe_unserialize( $vat_paid );
-				$currency_code		= isset( $vat_paid['currency'] )
-					? $vat_paid['currency']
-					: 'GBP';
+				$currency_code		= get_post_meta( $payment_id, '_order_currency',		true );
+				if (!$currency_code)
+					$currency_code = "GBP";
 
 				// Should exclude VAT numbers starting with GB
 				$country_code = substr($vrn, 0, 2);
@@ -264,11 +262,10 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 			$purchase_key		= get_post_meta( $id, '_order_key',				true );
 			$date				= get_post_meta( $id, '_completed_date',		true );
 			$order_total		= get_post_meta( $id, '_order_total',			true );
-			$vat_paid			= get_post_meta( $id, 'vat_compliance_vat_paid',	true );
-			$vat_paid			= maybe_unserialize( $vat_paid );
-			$currency_code		= isset( $vat_paid['currency'] )
-				? $vat_paid['currency']
-				: 'GBP';
+			$vat_paid			= get_post_meta( $id, 'vat_compliance_vat_paid',true );
+			$currency_code		= get_post_meta( $id, '_order_currency',		true );
+			if (!$currency_code)
+				$currency_code = "GBP";
 			
 			$order = wc_get_order( $id );
 			$line_items = $order->get_items( 'line_item' );
