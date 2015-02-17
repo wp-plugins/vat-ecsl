@@ -12,6 +12,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class VAT_ECSL_Admin_Menu {
 	
 

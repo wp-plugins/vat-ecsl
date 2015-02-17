@@ -12,6 +12,9 @@
  
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class ECSL_Integration_Dummy extends ECSL_Integration_Base {
 
 	/**
@@ -72,6 +75,7 @@ class ECSL_Integration_Dummy extends ECSL_Integration_Base {
 				'vrn'				=> $payment->vrn,
 				'date'				=> $payment->date,
 				'submission_id'		=> isset($payment->submission_id) ? $payment->submission_id : 0,
+				'currency_code'		=> isset($payment->currency_code) ? $payment->currency_code : 'GBP',
 				'values'			=> array( $payment->indicator => apply_filters( 'ecsl_get_transaction_amount', $payment->value, $payment->id ) )
 			);
 		}, $vat_payments );
@@ -174,10 +178,11 @@ class ECSL_Integration_Dummy extends ECSL_Integration_Base {
 				'vrn'				=> $payment->vrn,
 				'date'				=> $payment->date,
 				'submission_id'		=> isset($payment->submission_id) ? $payment->submission_id : 0,
+				'currency_code'		=> isset($payment->currency_code) ? $payment->currency_code : 'GBP',
 				'values'			=> array( $payment->indicator => apply_filters( 'ecsl_get_transaction_amount', $payment->value, $payment->id ) )
 			);
 		}, $vat_payments);
-		
+
 		return array( 'status' => 'success', 'information' => $vat_payments );
 	}
 

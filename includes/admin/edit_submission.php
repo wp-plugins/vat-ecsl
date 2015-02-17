@@ -12,16 +12,34 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function edit_submission($id)
 {
 	global $selected;
 
 	$selected	= maybe_unserialize(get_post_meta($id, 'ecslsales', true));
-	$from_year	= get_post_meta( $id, 'from_year',	true );
-	$from_month	= get_post_meta( $id, 'from_month',	true );
-	$to_year	= get_post_meta( $id, 'to_year',	true );
-	$to_month	= get_post_meta( $id, 'to_month',	true );
 
-	new_submission( $from_year, $from_month, $to_year, $to_month, $id );
+	if (isset($_REQUEST['change_periods']))
+	{
+		$from_year	= null;
+		$from_month	= null;
+		$to_year	= null;
+		$to_month	= null;
+	}
+	else
+	{
+		$from_year	= get_post_meta( $id, 'from_year',	true );
+		$from_month	= get_post_meta( $id, 'from_month',	true );
+		$to_year	= get_post_meta( $id, 'to_year',	true );
+		$to_month	= get_post_meta( $id, 'to_month',	true );
+	}
+
+	$state = get_post_status( $id );
+
+	$read_only = ($state === STATE_SUBMITTED || $state === STATE_ACKNOWLEDGED);
+
+	new_submission( $from_year, $from_month, $to_year, $to_month, $id, $read_only );
 }
 ?>

@@ -11,6 +11,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 if ( ! defined( 'STATE_UNKNOWN' ) )
 	define('STATE_UNKNOWN', 'unknown');
 
@@ -113,7 +116,7 @@ function ecsl_submissions()
 
 		view_submission($_REQUEST['id']);
 
-	} else if( ( isset( $_REQUEST['action'] ) && 'new_submission' == $_REQUEST['action']) || isset( $_REQUEST['new_submission'] )  ) {
+	} else if( isset( $_REQUEST['action'] ) && 'new_submission' == $_REQUEST['action'] )  {
 
 		if ( isset( $_REQUEST['save_submission']))
 			save_submission();

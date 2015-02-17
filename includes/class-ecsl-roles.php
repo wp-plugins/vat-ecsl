@@ -11,6 +11,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * ECSL_Roles Class
  *

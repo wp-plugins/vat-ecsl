@@ -12,6 +12,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function get_setting($id, $key)
 {
 	$result = '';

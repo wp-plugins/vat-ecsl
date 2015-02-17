@@ -11,6 +11,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function ecsl_submissions_settings()
 {
 	$active_tab = isset( $_GET[ 'tab' ] ) && array_key_exists( $_GET['tab'], ecsl_get_settings_tabs() ) ? $_GET[ 'tab' ] : 'general';

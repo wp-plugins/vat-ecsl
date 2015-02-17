@@ -4,7 +4,7 @@
 Plugin Name: WordPress VAT EC Sales List
 Plugin URI: http://www.lyquidity.com/wpstore/downloads/vat-ecsl/
 Description: Management and submission of VAT sales with VAT numbers.
-Version: 1.0.2
+Version: 1.0.3
 Tested up to: 4.1
 Author: Lyquidity Solutions
 Author URI: http://www.lyqidity.com/wpstore/
@@ -280,32 +280,24 @@ class WordPressPlugin {
 	*/
 	function constants()
 	{
-		if ( ! defined( 'VAT_ECSL_PLUGIN_DIR' ) ) {
+		if ( ! defined( 'VAT_ECSL_PLUGIN_DIR' ) )
 			define( 'VAT_ECSL_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-		}
 
-		if ( ! defined( 'VAT_ECSL_INCLUDES_DIR' ) ) {
+		if ( ! defined( 'VAT_ECSL_INCLUDES_DIR' ) )
 			define( 'VAT_ECSL_INCLUDES_DIR', VAT_ECSL_PLUGIN_DIR . "includes/" );
-		}
 
-		if ( ! defined( 'VAT_ECSL_TEMPLATES_DIR' ) ) {
+		if ( ! defined( 'VAT_ECSL_TEMPLATES_DIR' ) )
 			define( 'VAT_ECSL_TEMPLATES_DIR', VAT_ECSL_PLUGIN_DIR . "templates/" );
-		}
 
-		if ( ! defined( 'VAT_ECSL_PLUGIN_URL' ) ) {
+		if ( ! defined( 'VAT_ECSL_PLUGIN_URL' ) )
 			define( 'VAT_ECSL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-		}
 
-		if ( ! defined( 'VAT_ECSL_PLUGIN_FILE' ) ) {
+		if ( ! defined( 'VAT_ECSL_PLUGIN_FILE' ) )
 			define( 'VAT_ECSL_PLUGIN_FILE', __FILE__ );
-		}
 
 		if ( ! defined( 'VAT_ECSL_VERSION' ) )
-			define( 'VAT_ECSL_VERSION', '1.0.2' );
+			define( 'VAT_ECSL_VERSION', '1.0.3' );
 
-		if ( ! defined( 'VAT_ECSL_VENDOR_ID' ) )
-			define( 'VAT_ECSL_VENDOR_ID', '7199' );
-			
 		if ( ! defined( 'VAT_ECSL_WORDPRESS_COMPATIBILITY' ) )
 			define( 'VAT_ECSL_WORDPRESS_COMPATIBILITY', '4.1' );
 
@@ -328,16 +320,16 @@ class WordPressPlugin {
 			define('VAT_ECSL_DEACTIVATION_UPDATE_NOTICE', 'VAT_ECSL_DEACTIVATION_UPDATE_NOTICE');
 
 		if (!defined('VAT_ECSL_REASON_TOOSHORT'))
-			define('VAT_ECSL_REASON_TOOSHORT',			 __('The VAT number supplied is too short', 'vat_ecsl'));
+			define('VAT_ECSL_REASON_TOOSHORT', __('The VAT number supplied is too short', 'vat_ecsl'));
 
 		if (!defined('VAT_ECSL_REASON_INVALID_FORMAT'))
-			define('VAT_ECSL_REASON_INVALID_FORMAT',		 __('The VAT number supplied does not have a valid format', 'vat_ecsl'));
+			define('VAT_ECSL_REASON_INVALID_FORMAT', __('The VAT number supplied does not have a valid format', 'vat_ecsl'));
 
 		if (!defined('VAT_ECSL_REASON_SIMPLE_CHECK_FAILS'))
-			define('VAT_ECSL_REASON_SIMPLE_CHECK_FAILS',	 __('Simple check failed', 'vat_ecsl'));
+			define('VAT_ECSL_REASON_SIMPLE_CHECK_FAILS', __('Simple check failed', 'vat_ecsl'));
 
 		if (!defined('VAT_ECSL_ERROR_VALIDATING_VAT_ID'))
-			define('VAT_ECSL_ERROR_VALIDATING_VAT_ID',	 __('An error occurred validating the VAT number supplied', 'edd_vat'));
+			define('VAT_ECSL_ERROR_VALIDATING_VAT_ID', __('An error occurred validating the VAT number supplied', 'edd_vat'));
 
 	}
 
@@ -371,7 +363,7 @@ class WordPressPlugin {
 	*/
 	public function includes() {
 	
-		if(!is_admin()) return;
+		if(!is_admin() && php_sapi_name() !== "cli") return;
 
 		require_once VAT_ECSL_INCLUDES_DIR . 'admin-notices.php';
 

@@ -12,6 +12,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Sends a submission to HMRC and handles any errors
  *
@@ -37,6 +40,12 @@ function submit_submission($id)
 	 */
 
 	$post = get_post($id);
+	if ($post->post_status === STATE_SUBMITTED)
+	{
+		echo "<div class='updated'><p>" . __('This information has already been submitted', 'vat_moss' ) . "</p></div>";
+		show_submissions();
+		return;		
+	}
 	$selected		= maybe_unserialize(get_post_meta($id, 'ecslsales', true));
 	$vat_records	= vat_ecsl()->integrations->get_vat_record_information($selected);
 

@@ -12,6 +12,9 @@
  
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 
 	/**
@@ -122,6 +125,11 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 				$billing_first_name	= get_post_meta( $payment_id, '_billing_first_name',	true );
 				$billing_last_name	= get_post_meta( $payment_id, '_billing_last_name', 	true );
 				$order_total		= get_post_meta( $payment_id, '_order_total',			true );
+				$vat_paid			= get_post_meta( $payment_id, 'vat_compliance_vat_paid',	true );
+				$vat_paid			= maybe_unserialize( $vat_paid );
+				$currency_code		= isset( $vat_paid['currency'] )
+					? $vat_paid['currency']
+					: 'GBP';
 
 				// Should exclude VAT numbers starting with GB
 				$country_code = substr($vrn, 0, 2);
@@ -136,6 +144,7 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 				$vat_payment['date']			= $date;
 				$vat_payment['submission_id']	= $submission_id;
 				$vat_payment['buyer']			= sprintf("%1s %2s", $billing_first_name, $billing_last_name);
+				$vat_payment['currency_code']	= $currency_code;
 
 				$order = wc_get_order( $payment_id );
 				$line_items = $order->get_items( 'line_item' );
@@ -255,6 +264,11 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 			$purchase_key		= get_post_meta( $id, '_order_key',				true );
 			$date				= get_post_meta( $id, '_completed_date',		true );
 			$order_total		= get_post_meta( $id, '_order_total',			true );
+			$vat_paid			= get_post_meta( $id, 'vat_compliance_vat_paid',	true );
+			$vat_paid			= maybe_unserialize( $vat_paid );
+			$currency_code		= isset( $vat_paid['currency'] )
+				? $vat_paid['currency']
+				: 'GBP';
 			
 			$order = wc_get_order( $id );
 			$line_items = $order->get_items( 'line_item' );
@@ -268,6 +282,7 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 			$vat_payment['value']			= apply_filters( 'ecsl_get_transaction_amount', $order_total, $id  );
 			$vat_payment['date']			= $date;
 //			$vat_payment['values']			= array( '3' => apply_filters( 'ecsl_get_transaction_amount', $order_total, $id  ) );
+			$vat_payment['currency_code']	= $currency_code;
 
 			$values = array();
 

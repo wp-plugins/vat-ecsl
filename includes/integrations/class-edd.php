@@ -12,6 +12,9 @@
  
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class ECSL_Integration_EDD extends ECSL_Integration_Base {
 
 	/**
@@ -102,6 +105,7 @@ class ECSL_Integration_EDD extends ECSL_Integration_Base {
 
 				$payment_meta = edd_get_payment_meta( $payment_id );
 				$user_info = maybe_unserialize( $payment_meta['user_info'] );
+				$currency_code	= $payment_meta['currency'];
 
 				// If there is no VAT number then the record does not apply
 				if (empty($user_info['vat_number'])) continue;
@@ -119,6 +123,7 @@ class ECSL_Integration_EDD extends ECSL_Integration_Base {
 				$vat_payment['date']			= get_post_meta( $payment_id, '_edd_completed_date', true);
 				$vat_payment['submission_id']	= get_post_meta( $payment_id, 'ecsl_submission_id', true);
 				$vat_payment['buyer']			= sprintf("%1s %2s", $user_info['first_name'], $user_info['last_name']);
+				$vat_payment['currency_code']	= $currency_code;
 
 				$values = array();
 
@@ -228,6 +233,7 @@ class ECSL_Integration_EDD extends ECSL_Integration_Base {
 		
 			$payment_meta = edd_get_payment_meta( $id );
 			$user_info = maybe_unserialize( $payment_meta['user_info'] );
+			$currency_code	= $payment_meta['currency'];
 			
 			// If there is no VAT number then the record does not apply
 			if (empty($user_info['vat_number'])) continue;
@@ -240,6 +246,7 @@ class ECSL_Integration_EDD extends ECSL_Integration_Base {
 			$vat_payment['vrn']				= $user_info['vat_number'];
 			$vat_payment['purchase_key']	= get_post_meta( $id, '_edd_payment_purchase_key', true);
 			$vat_payment['submission_id']	= get_post_meta( $id, 'ecsl_submission_id', true);
+			$vat_payment['currency_code']	= $currency_code;
 
 			$values = array();
 

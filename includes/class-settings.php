@@ -12,6 +12,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class ECSL_WP_Settings {
 
 	private $options;

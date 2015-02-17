@@ -12,6 +12,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function delete_submission($id, $delete_post = true)
 {
 	if (!current_user_can('delete_submissions'))

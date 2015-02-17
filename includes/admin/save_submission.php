@@ -12,6 +12,9 @@
 
 namespace lyquidity\vat_ecsl;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function save_submission()
 {
 	error_log("Save Submission");
@@ -166,4 +169,3 @@ function save_submission()
 }
 
  ?>
- 
