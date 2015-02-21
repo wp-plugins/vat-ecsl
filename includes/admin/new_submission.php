@@ -281,6 +281,14 @@ function new_submission($from_year = null, $from_month = null, $to_year = null, 
 										<span><?php echo number_format( $sales_list->total_value, 2 ); ?></span>
 									</td>
 								</tr>
+<?php if ($submission_id) { ?>
+								<tr>
+									<td scope="row"><b><?php _e( '', 'vat_ecsl' ); ?></b></td>
+									<td>
+										<a id='export_records' href='?ecsl_action=export_records&submission_id=<?php echo $submission_id; ?>' target='_blank' class='export_records button button-secondary' title='Export to CSV'>Export to CSV</a>
+									</td>
+								</tr>
+<?php } ?>
 							</tbody>
 						</table>
 					</div>

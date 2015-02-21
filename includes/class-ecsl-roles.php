@@ -49,7 +49,7 @@ class ECSL_Roles {
 			'delete_posts'           => true
 		) );
 
-		add_role( 'ecsl_reviewer', __( 'ECSL Reviewer', 'edd' ), array(
+		add_role( 'ecsl_reviewer', __( 'ECSL Reviewer', 'vat_ecsl' ), array(
 		    'read'                   => true,
 		    'edit_posts'             => false,
 		    'delete_posts'           => false

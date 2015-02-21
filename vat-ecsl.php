@@ -4,7 +4,7 @@
 Plugin Name: WordPress VAT EC Sales List
 Plugin URI: http://www.lyquidity.com/wpstore/downloads/vat-ecsl/
 Description: Management and submission of VAT sales with VAT numbers.
-Version: 1.0.3
+Version: 1.0.4
 Tested up to: 4.1
 Author: Lyquidity Solutions
 Author URI: http://www.lyqidity.com/wpstore/
@@ -102,8 +102,9 @@ class WordPressPlugin {
 	 */
 	function actions()
 	{
-		add_action( 'ecsl_verify_ecsl_credentials',	array( $this, 'verify_ecsl_credentials' ) );
+		add_action( 'ecsl_verify_ecsl_credentials',		array( $this, 'verify_ecsl_credentials' ) );
 		add_action( 'ecsl_check_submission_license',	array( $this, 'check_submission_license' ) );
+		add_action( 'ecsl_export_records',				array( $this, 'export_records' ) );
 
 		// Allow the get_version request to obtain a response
 		add_action( 'edd_sl_license_response', array(&$this, 'sl_license_response'));
@@ -235,6 +236,117 @@ class WordPressPlugin {
 	}
 	
 	/**
+	 * Called by the client to download a CSV version of the selected submission
+	 *
+	 * @since 1.0.4
+	 */
+	function export_records($data)
+	{
+		require_once VAT_ECSL_INCLUDES_DIR . "replacement-functions.php";
+
+		if (!current_user_can('send_submissions'))
+		{
+			echo "<div class='error'><p>" . __('You do not have rights to submit an EC Sales List (VAT101)', 'vat_ecsl' ) . "</p></div>";
+			exit();
+		}
+
+		if (!isset( $_REQUEST['submission_id'] ) || empty( $_REQUEST['submission_id'] )  )
+		{
+			echo "<div class='error'><p>" . __('The id of the submission to export has not been provided.', 'vat_ecsl' ) . "</p></div>";
+			exit();			
+		}
+
+		try
+		{
+			$id = $_REQUEST['submission_id'];
+
+			$post = get_post($id);
+
+			$selected		= maybe_unserialize(get_post_meta($id, 'ecslsales', true));
+			$vat_records	= vat_ecsl()->integrations->get_vat_record_information($selected);
+
+			if (!$vat_records || !is_array($vat_records) || !isset($vat_records['status']))
+			{
+				echo __('There was an error creating the information to generate the CSV file.', 'vat_ecsl' );
+				exit();
+			}
+
+			if ($vat_records['status'] === 'error')
+			{
+				foreach($vat_records['messages'] as $key => $message)
+				{
+					echo "$message<br/>";
+				}
+				exit();
+			}
+
+			$ecsl_lines = array();
+
+			$vat_payments = vat_ecsl()->integrations->flatten_vat_information($vat_records['information']);
+
+			foreach($vat_payments as $key => $payment)
+			{
+				$ecsl_lines[] = array(
+					'SubmittersReference' =>  "{$payment['source']}-{$payment['id']}",
+					'CountryCode' =>  substr( $payment['vrn'], 0, 2 ),
+					'CustomerVATRegistrationNumber' =>  substr( $payment['vrn'], 2 ),
+					'TotalValueOfSupplies' => floor( $payment['value'] ),
+					'TransactionIndicator' => $payment['indicator']
+				);
+			}
+			
+	//		error_log(print_r($ecsl_lines,true));
+
+			$vrn				= get_post_meta( $id, 'vat_number',			true );
+			$submitter			= get_post_meta( $id, 'submitter',			true );
+			$email				= get_post_meta( $id, 'email',				true );
+			$branch				= get_post_meta( $id, 'branch',				true );
+			$postcode			= get_post_meta( $id, 'postcode',			true );
+			$submission_period	= get_post_meta( $id, 'submission_period',	true );
+			$submission_year	= get_post_meta( $id, 'submission_year',	true );
+			$period				= vat_ecsl()->settings->get('period') === 'monthly' ? 'month' : 'quarter' ;
+			$title				= get_the_title( $id );
+
+			// Redirect output to a client’s web browser (Excel2007)
+			header('Content-Type: text/csv');
+			header('Content-Disposition: attachment;filename="' . "$title Q$submission_period-$submission_year.csv");
+			header('Cache-Control: max-age=0');
+			// If you're serving to IE 9, then the following may be needed
+			header('Cache-Control: max-age=1');
+
+			// If you're serving to IE over SSL, then the following may be needed
+			header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+			header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+			header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+			header ('Pragma: public'); // HTTP/1.0
+
+			echo "vat_number:\t\t$vrn\n";
+			echo "submitter:		$submitter\n";
+			echo "email_address:	$email\n";
+			echo "branch:			$branch\n";
+			echo "postcode:		$postcode\n";
+			echo "period:			$submission_period (" . (vat_ecsl()->settings->get('period') === 'monthly' ? 'month' : 'quarter') . ")\n";
+			echo "year:			$submission_year\n";
+
+			echo "SubmittersReference,CountryCode,CustomerVATRegistrationNumber,TotalValueOfSupplies,TransactionIndicator\n";
+				
+			foreach($ecsl_lines as $key => $line)
+			{
+				echo implode(",", $line) . "\n";
+			}
+
+		}
+		catch(\Exception $ex)
+		{
+			error_log($ex->getMessage());
+			echo "Download failed: " . $ex->getMessage();
+		}
+
+		exit();
+
+	}
+
+	/**
 	 * Take an action when the plugin is activated
 	 */
 	function plugin_activation()
@@ -296,7 +408,7 @@ class WordPressPlugin {
 			define( 'VAT_ECSL_PLUGIN_FILE', __FILE__ );
 
 		if ( ! defined( 'VAT_ECSL_VERSION' ) )
-			define( 'VAT_ECSL_VERSION', '1.0.3' );
+			define( 'VAT_ECSL_VERSION', '1.0.4' );
 
 		if ( ! defined( 'VAT_ECSL_WORDPRESS_COMPATIBILITY' ) )
 			define( 'VAT_ECSL_WORDPRESS_COMPATIBILITY', '4.1' );
@@ -362,8 +474,8 @@ class WordPressPlugin {
 	* @since 1.0
 	*/
 	public function includes() {
-	
-		if(!is_admin() && php_sapi_name() !== "cli") return;
+
+		if( !is_admin() && php_sapi_name() !== "cli") return;
 
 		require_once VAT_ECSL_INCLUDES_DIR . 'admin-notices.php';
 
