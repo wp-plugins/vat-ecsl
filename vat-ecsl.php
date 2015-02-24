@@ -124,7 +124,7 @@ class WordPressPlugin {
 
 		if (function_exists('ecsl_submissions_settings'))
 		{
-			// These three lines allow for the plugin folder name to be something other than edd-vat
+			// These three lines allow for the plugin folder name to be something other than vat-ecsl
 			$plugin = plugin_basename(__FILE__);
 			$basename = strtolower( dirname($plugin) );
 			add_filter( 'sl_updater_' . $basename, array(&$this, 'sl_updater_vat_ecsl'), 10, 2);
@@ -441,7 +441,7 @@ class WordPressPlugin {
 			define('VAT_ECSL_REASON_SIMPLE_CHECK_FAILS', __('Simple check failed', 'vat_ecsl'));
 
 		if (!defined('VAT_ECSL_ERROR_VALIDATING_VAT_ID'))
-			define('VAT_ECSL_ERROR_VALIDATING_VAT_ID', __('An error occurred validating the VAT number supplied', 'edd_vat'));
+			define('VAT_ECSL_ERROR_VALIDATING_VAT_ID', __('An error occurred validating the VAT number supplied', 'vat_ecsl'));
 
 	}
 
