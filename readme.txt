@@ -5,7 +5,7 @@ Contributors: bseddon
 Tags: VAT, HMRC, ECSL, EC Sales List, VAT101, tax, EU, UK
 Requires at least: 3.9.2
 Tested up to: 4.1
-Stable Tag: 1.0.3
+Stable Tag: 1.0.5
 License: GNU Version 2 or Any Later Version
 
 Create submissions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digital Downloads &amp; Woo Commerce sales records.
@@ -80,6 +80,15 @@ Initial version released
 Added currency translation to convert a UK site denominated in, say, USD to GBP.
 Added tests to make sure plugin files cannot be executed independently.
 Added additional checks to prevent actions being repeated if subsequent attempts would be invalid.
+
+= 1.0.4
+
+Added export
+
+= 1.0.5
+
+Small change to prevent js and css files being added to the front end
+
 
 == Upgrade Notice ==
 

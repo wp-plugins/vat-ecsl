@@ -15,6 +15,9 @@
  * @since       1.0
  */
 
+ // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 if (!function_exists('convert_to_screen'))
 {
 	function convert_to_screen( $hook_name ) {
