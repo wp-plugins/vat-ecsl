@@ -74,6 +74,8 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 			'value'		=> 0,
 			'compare'	=> '='
 		);
+		
+/*
 		$meta_query[] = array(
 			'key'		=> 'VAT Number',
 			'compare'	=> 'EXISTS'
@@ -83,6 +85,36 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 			'value'		=> 'true',
 			'compare'	=> '='
 		);
+ */
+		
+		$meta_query[] = array(
+			'relation' => 'OR',
+			array(
+				'relation' => 'AND',
+				array(
+					'key'		=> 'VAT Number',
+					'compare'	=> 'EXISTS'
+				),
+				array(
+					'key'		=> 'Valid EU VAT Number',
+					'value'		=> 'true',
+					'compare'	=> '='
+				)
+			),
+			array(
+				'relation' => 'AND',
+				array(
+					'key'		=> 'vat_number',
+					'compare'	=> 'EXISTS'
+				),
+				array(
+					'key'		=> 'vat_number',
+					'value'		=> ' ',
+					'compare'	=> '!='
+				)
+			)
+		);
+
 		
 		if (!$includeSubmitted)
 		{
@@ -120,6 +152,8 @@ class ECSL_Integration_WOOC extends ECSL_Integration_Base {
 
 				$purchase_key		= get_post_meta( $payment_id, '_order_key',				true );
 				$vrn				= get_post_meta( $payment_id, 'VAT Number',				true );
+				if (empty($vrn))
+					$vrn			= get_post_meta( $payment_id, 'vat_number',				true );
 				$date				= get_post_meta( $payment_id, '_completed_date',		true );
 				$submission_id		= get_post_meta( $payment_id, 'ecsl_submission_id', 	true );
 				$billing_first_name	= get_post_meta( $payment_id, '_billing_first_name',	true );

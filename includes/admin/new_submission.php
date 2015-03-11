@@ -105,7 +105,7 @@ function new_submission($from_year = null, $from_month = null, $to_year = null, 
 
 			<div id="poststuff" >
 				<div id="ecsl_submission_header" class="postbox ">
-					<h3 class="hndle ui-sortable-handle"><span>Details</span></h3>
+					<h3 class="hndle ui-sortable-handle"><span><?php _e('Details', 'vat_ecsl'); ?></span></h3>
 					<div class="inside">
 						<table width="100%" class="ecsl-submission-header-details">
 							<colgroup>
@@ -155,7 +155,7 @@ function new_submission($from_year = null, $from_month = null, $to_year = null, 
 		if (!$read_only) { ?>
 								<tr>
 									<td scope="row"</td>
-									<td><span>If a license key is not supplied, any submission will always be in test mode.</span></td>
+									<td><span><?php _e( 'If a license key is not supplied, any submission will always be in test mode.', 'vat_ecsl' ); ?></span></td>
 								</tr>
 <?php	}
 		if ($submission_id) { ?>

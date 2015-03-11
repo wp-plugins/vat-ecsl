@@ -406,7 +406,6 @@ function check_submission($id)
 		'test_mode'			=> $test_mode,
 		'correlation_id'	=> $correlationid,
 		'submission_key'	=> $submission_key,
-		'test_mode'			=> $test_mode,
 		'edd_action'		=> 'check_ecsl'
 	);
 		

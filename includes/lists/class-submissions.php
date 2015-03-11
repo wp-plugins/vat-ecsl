@@ -286,7 +286,7 @@ class ECSL_Submissions extends \WP_List_Table {
 			<input type="hidden" name="post_type" value="submission"/>
 			<input type="hidden" name="page" value="ecsl-submissions"/>
 
-			<?php submit_button( __( 'Show', 'edd' ), 'secondary', 'submit', false ); ?>
+			<?php submit_button( __( 'Show', 'vat_moss' ), 'secondary', 'submit', false ); ?>
 		</form>
 <?php
 		do_action( 'ecsl_report_view_actions_after' );

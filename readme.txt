@@ -2,10 +2,10 @@
 Author URI: http://www.lyquidity.com/
 Plugin URI: http://www.lyquidity.com/wpstore/wp-vat-ec-sales-list-submissions/
 Contributors: bseddon
-Tags: VAT, HMRC, ECSL, EC Sales List, VAT101, tax, EU, UK
+Tags: VAT, HMRC, ECSL, EC Sales List, VAT101, tax, EU, UK, WooCommerce
 Requires at least: 3.9.2
 Tested up to: 4.1
-Stable Tag: 1.0.5
+Stable Tag: 1.0.7
 License: GNU Version 2 or Any Later Version
 
 Create submissions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digital Downloads &amp; Woo Commerce sales records.
@@ -60,7 +60,9 @@ Install the plugin in the normal way then select the settings option from the EC
 
 **Requires**
 
-This plugin requires that you capture VAT information in a supported format such as the format created by the [Lyquidity VAT plugin for EDD](http://www.lyquidity.com/wpstore/ "VAT for EDD") or the [Woo Commerce EU VAT Compliance plugin](https://www.simbahosting.co.uk/s3/product/woocommerce-eu-vat-compliance/ "Premium version").
+This plugin requires that you capture VAT information in a supported format such as the format created by the [Lyquidity VAT plugin for EDD](http://www.lyquidity.com/wpstore/ "VAT for EDD") 
+or the [Woo Commerce EU VAT Compliance plugin "Premium version"](https://www.simbahosting.co.uk/s3/product/woocommerce-eu-vat-compliance/) or
+or the [WooCommerce EU VAT Assistant](https://wordpress.org/plugins/woocommerce-eu-vat-assistant/).
 
 == Screenshots ==
 
@@ -89,6 +91,14 @@ Added export
 
 Small change to prevent js and css files being added to the front end
 
+= 1.0.6
+
+Changes to address problems with translatability
+
+= 1.0.7
+
+Added support for EU VAT Assistant for WooCommerce from Aelia
+Added notices that VAT plugins must be installed and activated
 
 == Upgrade Notice ==
 

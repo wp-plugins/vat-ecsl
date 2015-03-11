@@ -25,6 +25,17 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 */
 function admin_notices() {
 
+	$integrations = ECSL_WP_Integrations::get_integrations_list();
+	if (isset( $integrations['wooc'] ) && !class_exists('Aelia\WC\EU_VAT_Assistant\WC_Aelia_EU_VAT_Assistant'))
+	{
+		echo "<div class='error'><p>" . __("The Aelia EU VAT Assistant or the Simba EU VAT Compliance (Premium) plug-in must be installed to use the WooCommerce integration.", "vat_ecsl") . "</p></div>";				
+	}
+
+	if (isset( $integrations['edd'] ) && !class_exists('lyquidity\edd_vat\WordPressPlugin'))
+	{
+		echo "<div class='error'><p>" . __("The Lyquidity VAT plugin for EDD must be installed to use the EDD integration.", "vat_ecsl") . "</p></div>";				
+	}
+
 	if (!isset($_REQUEST['page']) || $_REQUEST['page'] !== 'ecsl-submissions-settings') return;
 
 	$vat_number = vat_ecsl()->settings->get( 'vat_number', array() );

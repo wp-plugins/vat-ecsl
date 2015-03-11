@@ -169,9 +169,9 @@ class ECSL_Sales_List extends \WP_List_Table {
 			$columns['cb'] = 'All';
 
 		$columns = $columns + array(
-			'id'				=> __( 'ID' ),
-			'purchase_key'		=> __( 'Purchase ID' ),
-			'vrn'				=> __( 'VAT Number' ),
+			'id'				=> __( 'ID', 'vat_ecsl' ),
+			'purchase_key'		=> __( 'Purchase ID', 'vat_ecsl' ),
+			'vrn'				=> __( 'VAT Number', 'vat_ecsl' ),
 			'date'				=> __( 'Date', 'vat_ecsl' ),
 			'source'    		=> __( 'Source', 'vat_ecsl' ),
 			'message'			=> __( 'Message', 'vat_ecsl' ),
@@ -362,7 +362,7 @@ class ECSL_Sales_List extends \WP_List_Table {
 		// These aren't really bulk actions but this outputs the markup in the right place
 		do_action( 'ecsl_report_view_actions' );
 		if (!$this->read_only)
-			submit_button( __( 'Show', 'edd' ), 'secondary', 'change_periods', false );
+			submit_button( __( 'Show', 'vat_moss' ), 'secondary', 'change_periods', false );
 		do_action( 'ecsl_report_view_actions_after' );
 	}
 

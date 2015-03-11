@@ -134,8 +134,8 @@ class ECSL_HTML_Elements {
 			'selected'         => 0,
 			'chosen'           => false,
 			'multiple'         => false,
-			'show_option_all'  => _x( 'All', 'all dropdown items', 'edd' ),
-			'show_option_none' => _x( 'None', 'no dropdown items', 'edd' )
+			'show_option_all'  => _x( 'All', 'all dropdown items', 'vat_moss' ),
+			'show_option_none' => _x( 'None', 'no dropdown items', 'vat_moss' )
 		);
 
 		$args = wp_parse_args( $args, $defaults );
@@ -323,7 +323,7 @@ class ECSL_HTML_Elements {
 		$defaults = array(
 			'name'        => 'user_id',
 			'value'       => null,
-			'placeholder' => __( 'Enter username', 'edd' ),
+			'placeholder' => __( 'Enter username', 'vat_moss' ),
 			'label'       => null,
 			'desc'        => null,
             'class'       => '',
