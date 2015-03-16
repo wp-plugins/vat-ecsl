@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function admin_notices() {
 
 	$integrations = ECSL_WP_Integrations::get_integrations_list();
-	if (isset( $integrations['wooc'] ) && !class_exists('Aelia\WC\EU_VAT_Assistant\WC_Aelia_EU_VAT_Assistant'))
+	if (isset( $integrations['wooc'] ) && !( class_exists('Aelia\WC\EU_VAT_Assistant\WC_Aelia_EU_VAT_Assistant') || class_exists('WC_EU_VAT_Compliance') ))
 	{
 		echo "<div class='error'><p>" . __("The Aelia EU VAT Assistant or the Simba EU VAT Compliance (Premium) plug-in must be installed to use the WooCommerce integration.", "vat_ecsl") . "</p></div>";				
 	}
