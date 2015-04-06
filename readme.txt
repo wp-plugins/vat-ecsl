@@ -5,7 +5,7 @@ Contributors: bseddon
 Tags: VAT, HMRC, ECSL, EC Sales List, VAT101, tax, EU, UK, WooCommerce
 Requires at least: 3.9.2
 Tested up to: 4.1
-Stable Tag: 1.0.8
+Stable Tag: 1.0.9
 License: GNU Version 2 or Any Later Version
 
 Create submissions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digital Downloads &amp; Woo Commerce sales records.
@@ -103,6 +103,10 @@ Added notices that VAT plugins must be installed and activated
 = 1.0.8 =
 
 Fixed the tests to confirm the existence of the Lyquidity plugin (EDD) or the Simba or EU VAT Assistant plugin (WooCommerce)
+
+= 1.0.9 =
+
+Fixed a problem with the EDD integration which was missing a date element.
 
 == Upgrade Notice ==
 

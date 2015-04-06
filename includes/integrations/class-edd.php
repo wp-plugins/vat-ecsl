@@ -142,7 +142,6 @@ class ECSL_Integration_EDD extends ECSL_Integration_Base {
 						fees (Array)
 						price
 					 */
-
 					$values[$indicator]		= ( isset($values[$indicator]) ? $values[$indicator] : 0 ) + apply_filters( 'ecsl_get_transaction_amount', $item['price'], $payment_id);
 				}
 
@@ -150,7 +149,6 @@ class ECSL_Integration_EDD extends ECSL_Integration_Base {
 				$vat_payments[] = $vat_payment;
 			}
 		}
-
 		return $vat_payments;
 	}
 	
@@ -247,6 +245,9 @@ class ECSL_Integration_EDD extends ECSL_Integration_Base {
 			$vat_payment['purchase_key']	= get_post_meta( $id, '_edd_payment_purchase_key', true);
 			$vat_payment['submission_id']	= get_post_meta( $id, 'ecsl_submission_id', true);
 			$vat_payment['currency_code']	= $currency_code;
+			$vat_payment['date']			= get_post_meta( $id, '_edd_completed_date', true);
+
+//			$vat_payment['value']			= apply_filters( 'ecsl_get_transaction_amount', $order_total, $id  );
 
 			$values = array();
 

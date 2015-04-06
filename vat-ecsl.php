@@ -4,7 +4,7 @@
 Plugin Name: WordPress VAT EC Sales List
 Plugin URI: http://www.lyquidity.com/wpstore/downloads/vat-ecsl/
 Description: Management and submission of VAT sales with VAT numbers.
-Version: 1.0.8
+Version: 1.0.9
 Tested up to: 4.1
 Author: Lyquidity Solutions
 Author URI: http://www.lyqidity.com/wpstore/
@@ -408,7 +408,7 @@ class WordPressPlugin {
 			define( 'VAT_ECSL_PLUGIN_FILE', __FILE__ );
 
 		if ( ! defined( 'VAT_ECSL_VERSION' ) )
-			define( 'VAT_ECSL_VERSION', '1.0.8' );
+			define( 'VAT_ECSL_VERSION', '1.0.9' );
 
 		if ( ! defined( 'VAT_ECSL_WORDPRESS_COMPATIBILITY' ) )
 			define( 'VAT_ECSL_WORDPRESS_COMPATIBILITY', '4.1' );
@@ -417,7 +417,7 @@ class WordPressPlugin {
 			define( 'VAT_ECSL_STORE_API_URL', 'https://www.lyquidity.com/wpstore/' );
 
 		if ( ! defined( 'VAT_ECSL_PRODUCT_NAME' ) )
-			define( 'VAT_ECSL_PRODUCT_NAME', 'WP VAT ECSL Management' );
+			define( 'VAT_ECSL_PRODUCT_NAME', 'EC Sales List Submissions Credit' );
 
 		if (!defined('VAT_ECSL_ACTIVATION_ERROR_NOTICE'))
 			define('VAT_ECSL_ACTIVATION_ERROR_NOTICE', 'VAT_ECSL_ACTIVATION_ERROR_NOTICE');
