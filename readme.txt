@@ -1,11 +1,11 @@
 === VAT EC Sales List ===
-Author URI: http://www.lyquidity.com/
-Plugin URI: http://www.lyquidity.com/wpstore/wp-vat-ec-sales-list-submissions/
+Author URI: http://www.wproute.com/
+Plugin URI: http://www.wproute.com/wp-vat-ec-sales-list-submissions/
 Contributors: bseddon
 Tags: VAT, HMRC, ECSL, EC Sales List, VAT101, tax, EU, UK, WooCommerce
 Requires at least: 3.9.2
 Tested up to: 4.1
-Stable Tag: 1.0.9
+Stable Tag: 1.0.10
 License: GNU Version 2 or Any Later Version
 
 Create submissions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digital Downloads &amp; Woo Commerce sales records.
@@ -16,7 +16,7 @@ Create submissions for EC Sales List returns (VAT101) to be sent directly to HMR
 
 Each quarter, or even month, UK businesses must submit to the UK tax authority (HMRC) an **EC Sales List** to document sales made to businesses in other EU member states. This plug-in integrates with Easy Digital Downloads and/or Woo Commerce so it is able retrieve relevant sales records from which to create the quarterly (or monthly) return.
 
-**Note:** This plugin is free to download and you will be able to use it to create and test EC Sales List submissions. To submit returns directly to HMRC you will need to purchase a credit [from our web site](http://www.lyquidity.com/wpstore/2015/01/wp-vat-ec-sales-list-submissions/ "Buy credits"): &pound;5 for a single submission; &pound;18 for 4 (quarterly) submissions; &pound;50 for 12 (monthly) submissions.
+**Note:** This plugin is free to download and you will be able to use it to create and test EC Sales List submissions. To submit returns directly to HMRC you will need to purchase a credit [from our web site](http://www.wproute.com/2015/01/wp-vat-ec-sales-list-submissions/ "Buy credits"): &pound;5 for a single submission; &pound;18 for 4 (quarterly) submissions; &pound;50 for 12 (monthly) submissions.
 
 = Features =
 
@@ -40,11 +40,11 @@ Each quarter, or even month, UK businesses must submit to the UK tax authority (
 
 **Videos**
 
-[Watch videos](http://www.lyquidity.com/wpstore/2015/01/wp-vat-ec-sales-list-submissions/ "Videos showing the plug-in working") showing how to setup the plugin, create a submission and send the return to HMRC
+[Watch videos](http://www.wproute.com/2015/01/wp-vat-ec-sales-list-submissions/ "Videos showing the plug-in working") showing how to setup the plugin, create a submission and send the return to HMRC
 	
 **Submit EC Sales list returns directly to HMRC**
 
-[Buy credits](http://www.lyquidity.com/wpstore/2015/01/wp-vat-ec-sales-list-submissions/ "Buy credits") to submit your EC Sales List return directly to HMRC.
+[Buy credits](http://www.wproute.com/2015/01/wp-vat-ec-sales-list-submissions/ "Buy credits") to submit your EC Sales List return directly to HMRC.
 
 == Frequently Asked Questions ==
 
@@ -56,11 +56,11 @@ A. No, you are able to test sending an EC Sales List return before you buy a cre
 
 == Installation ==
 
-Install the plugin in the normal way then select the settings option from the ECSL menu added to the main WordPress menu.  Detailed [configuration and use instructions](http://www.lyquidity.com/wpstore/wp-vat-ec-sales-list-submissions/) can be found on our web site.
+Install the plugin in the normal way then select the settings option from the ECSL menu added to the main WordPress menu.  Detailed [configuration and use instructions](http://www.wproute.com/wp-vat-ec-sales-list-submissions/) can be found on our web site.
 
 **Requires**
 
-This plugin requires that you capture VAT information in a supported format such as the format created by the [Lyquidity VAT plugin for EDD](http://www.lyquidity.com/wpstore/ "VAT for EDD") 
+This plugin requires that you capture VAT information in a supported format such as the format created by the [Lyquidity VAT plugin for EDD](http://www.wproute.com/ "VAT for EDD") 
 or the [Woo Commerce EU VAT Compliance plugin "Premium version"](https://www.simbahosting.co.uk/s3/product/woocommerce-eu-vat-compliance/) or
 or the [WooCommerce EU VAT Assistant](https://wordpress.org/plugins/woocommerce-eu-vat-assistant/).
 
@@ -107,6 +107,10 @@ Fixed the tests to confirm the existence of the Lyquidity plugin (EDD) or the Si
 = 1.0.9 =
 
 Fixed a problem with the EDD integration which was missing a date element.
+
+= 1.0.10 =
+
+Updated references to the service site
 
 == Upgrade Notice ==
 

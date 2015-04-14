@@ -193,7 +193,7 @@ function show_submissions()
 				<a href="?page=ecsl-submissions&action=new_submission" class="add-new-h2"><?php _e( 'Add New', 'vat_ecsl' ); ?></a>
 			</h2>
 
-			<p>To find information to help you use this plug-in <a href="http://www.lyquidity.com/wpstore/2015/01/wp-vat-ec-sales-list-submissions/">visit the plug-in page on our site</a>.</p>
+			<p>To find information to help you use this plug-in <a href="http://www.wproute.com/2015/01/wp-vat-ec-sales-list-submissions/">visit the plug-in page on our site</a>.</p>
 			<p>Please note that to ensure we are able to process any submissions you make, to verify any completed submissions or to be able to answer questions about any submissions you make that fail, details of your submission will be held on our site.</p>
 
 			<?php do_action( 'ecsl_overview_top' ); ?>
