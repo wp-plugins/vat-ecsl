@@ -4,8 +4,8 @@ Plugin URI: http://www.wproute.com/wp-vat-ec-sales-list-submissions/
 Contributors: bseddon
 Tags: VAT, HMRC, ECSL, EC Sales List, VAT101, tax, EU, UK, WooCommerce
 Requires at least: 3.9.2
-Tested up to: 4.1
-Stable Tag: 1.0.10
+Tested up to: 4.2
+Stable Tag: 1.0.11
 License: GNU Version 2 or Any Later Version
 
 Create submissions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digital Downloads &amp; Woo Commerce sales records.
@@ -111,6 +111,10 @@ Fixed a problem with the EDD integration which was missing a date element.
 = 1.0.10 =
 
 Updated references to the service site
+
+= 1.0.11 =
+
+Updated add_query_arg calls to escape them as recommended by the WordPress advisory
 
 == Upgrade Notice ==
 
