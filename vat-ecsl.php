@@ -4,7 +4,7 @@
 Plugin Name: WordPress VAT EC Sales List
 Plugin URI: http://www.wproute.com/downloads/vat-ecsl/
 Description: Management and submission of VAT sales with VAT numbers.
-Version: 1.0.11
+Version: 1.0.13
 Tested up to: 4.2
 Author: Lyquidity Solutions
 Author URI: http://www.wproute.com/
@@ -408,7 +408,7 @@ class WordPressPlugin {
 			define( 'VAT_ECSL_PLUGIN_FILE', __FILE__ );
 
 		if ( ! defined( 'VAT_ECSL_VERSION' ) )
-			define( 'VAT_ECSL_VERSION', '1.0.11' );
+			define( 'VAT_ECSL_VERSION', '1.0.13' );
 
 		if ( ! defined( 'VAT_ECSL_WORDPRESS_COMPATIBILITY' ) )
 			define( 'VAT_ECSL_WORDPRESS_COMPATIBILITY', '4.1' );

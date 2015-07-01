@@ -362,7 +362,7 @@ class ECSL_Sales_List extends \WP_List_Table {
 		// These aren't really bulk actions but this outputs the markup in the right place
 		do_action( 'ecsl_report_view_actions' );
 		if (!$this->read_only)
-			submit_button( __( 'Show', 'vat_moss' ), 'secondary', 'change_periods', false );
+			submit_button( __( 'Show', 'vat_ecsl' ), 'secondary', 'change_periods', false );
 		do_action( 'ecsl_report_view_actions_after' );
 	}
 

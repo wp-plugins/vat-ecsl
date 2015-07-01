@@ -42,7 +42,7 @@ function submit_submission($id)
 	$post = get_post($id);
 	if ($post->post_status === STATE_SUBMITTED)
 	{
-		echo "<div class='updated'><p>" . __('This information has already been submitted', 'vat_moss' ) . "</p></div>";
+		echo "<div class='updated'><p>" . __('This information has already been submitted', 'vat_ecsl' ) . "</p></div>";
 		show_submissions();
 		return;		
 	}

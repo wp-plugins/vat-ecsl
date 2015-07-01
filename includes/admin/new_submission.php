@@ -249,6 +249,7 @@ function new_submission($from_year = null, $from_month = null, $to_year = null, 
 										<span><?php echo $postcode; ?></span>
 <?php	} else { ?>
 										<input type="text" class="regular-text" id="ecsl_settings_postcode" name="ecsl_settings_postcode" value="<?php echo $postcode; ?>">
+										<span>Do not include a space in the postcode</span>
 <?php	} ?>
 									</td>
 								</tr>

@@ -227,7 +227,7 @@ class ECSL_WP_Settings {
 					),
 					'postcode' => array(
 						'name' => __( 'Postcode', 'vat_ecsl' ),
-						'desc' => '<p class="description">' . __( 'Enter the default postcode of the submitting organisation.', 'vat_ecsl' ) . '</p>',
+						'desc' => '<p class="description">' . __( 'Enter the default postcode of the submitting organisation. Do not include a space.', 'vat_ecsl' ) . '</p>',
 						'type' => 'text'
 					),
 					'period' => array(

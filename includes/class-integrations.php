@@ -373,8 +373,8 @@ class ECSL_WP_Integrations {
 	function handle_euro_error()
 	{
 		$this->issues[] = empty($this->euro_rates)
-			? __( "An error occurred reading Euro exchange rates and no exchange rates have been read.", "vat_moss" )
-			: __( "An error occurred reading Euro exchange rates. The existing rates will be used but these may be inaccurate.", "vat_moss" );
+			? __( "An error occurred reading Euro exchange rates and no exchange rates have been read.", "vat_ecsl" )
+			: __( "An error occurred reading Euro exchange rates. The existing rates will be used but these may be inaccurate.", "vat_ecsl" );
 
 		return false;
 	}

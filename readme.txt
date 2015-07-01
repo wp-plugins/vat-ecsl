@@ -5,7 +5,7 @@ Contributors: bseddon
 Tags: VAT, HMRC, ECSL, EC Sales List, VAT101, tax, EU, UK, WooCommerce
 Requires at least: 3.9.2
 Tested up to: 4.2
-Stable Tag: 1.0.11
+Stable Tag: 1.0.13
 License: GNU Version 2 or Any Later Version
 
 Create submissions for EC Sales List returns (VAT101) to be sent directly to HMRC from Easy Digital Downloads &amp; Woo Commerce sales records.
@@ -115,6 +115,14 @@ Updated references to the service site
 = 1.0.11 =
 
 Updated add_query_arg calls to escape them as recommended by the WordPress advisory
+
+= 1.0.12 =
+
+Fixed text domain errors
+
+= 1.0.13 =
+
+Added note alongside the postcode to warn users the postcode must not contain a space.  KT35EE is OK.  KT3 5EE will cause an HMRC sumbission validaton failure.
 
 == Upgrade Notice ==
 
