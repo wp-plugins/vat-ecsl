@@ -4,7 +4,7 @@ Plugin URI: http://www.wproute.com/wp-vat-ec-sales-list-submissions/
 Contributors: bseddon
 Tags: VAT, HMRC, ECSL, EC Sales List, VAT101, tax, EU, UK, WooCommerce
 Requires at least: 3.9.2
-Tested up to: 4.2
+Tested up to: 4.3
 Stable Tag: 1.0.13
 License: GNU Version 2 or Any Later Version
 
